@@ -12,9 +12,9 @@ class Movie {
         $this->genre = $genre;
         $this->release = $release;
         $this->rating = $rating;
-        if ($genre = "horror") {
+        if($genre == "horror") {
             $this->rating = "18+";
-        } else if($genre = "thriller") {
+        } else if($genre == "thriller") {
             $this->rating = "15+";
         } else {
             $this->rating = "free";
