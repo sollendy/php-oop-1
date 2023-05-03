@@ -1,8 +1,9 @@
 <?php
 require_once './Models/Movies.php';
-$horror = new Movie("L'evocazione", "Lionsgate", "horror", 2014, "");
-$thriller = new Movie("Seven", "Medusa", "thriller", 2003, "");
-$free = new Movie("Il Pianeta Del Tesoro", "Disney", "animazione", 2004, "");
+require_once './models/directors.php';
+$horror = new Movie("L'evocazione", "Lionsgate", "horror", 2014, "", new Directors("James Wan"));
+$thriller = new Movie("Seven", "Medusa", "thriller", 2003, "", new Directors("David Fincher"));
+$free = new Movie("Il Pianeta Del Tesoro", "Disney", "animazione", 2004, "", new Directors("Ron Clements, John Musker"));
 $film[] = $horror;
 $film[] = $thriller;
 $film[] = $free;
@@ -27,6 +28,7 @@ $film[] = $free;
       <th scope="col">Genere</th>
       <th scope="col">Uscita</th>
       <th scope="col">Età</th>
+      <th scope="col">Regista</th>
     </tr>
   </thead>
   <tbody>
@@ -39,6 +41,7 @@ $film[] = $free;
       <td><?= $pellicola ->genre?></td>
       <td><?= $pellicola ->release?></td>
       <td><?= $pellicola ->rating?></td>
+      <td><?= $pellicola ->director ->scopriRegista()?></td>
     </tr>
     <?php 
     } 
