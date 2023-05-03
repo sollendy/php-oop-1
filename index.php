@@ -3,6 +3,9 @@ require_once './Models/Movies.php';
 $horror = new Movie("L'evocazione", "Lionsgate", "horror", 2014, "");
 $thriller = new Movie("Seven", "Medusa", "thriller", 2003, "");
 $free = new Movie("Il Pianeta Del Tesoro", "Disney", "animazione", 2004, "");
+$film[] = $horror;
+$film[] = $thriller;
+$film[] = $free;
 ?>
 
 <!DOCTYPE html>
@@ -19,30 +22,27 @@ $free = new Movie("Il Pianeta Del Tesoro", "Disney", "animazione", 2004, "");
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Titolo</th>
+      <th scope="col">Editore</th>
+      <th scope="col">Genere</th>
+      <th scope="col">Uscita</th>
+      <th scope="col">Età</th>
     </tr>
   </thead>
   <tbody>
+    <?php 
+      foreach($film as $pellicola) {
+    ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td><?= $pellicola ->title?></td>
+      <td><?= $pellicola ->publisher?></td>
+      <td><?= $pellicola ->genre?></td>
+      <td><?= $pellicola ->release?></td>
+      <td><?= $pellicola ->rating?></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <?php 
+    } 
+    ?>
   </tbody>
 </table>
 
