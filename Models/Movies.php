@@ -15,7 +15,7 @@ class Movie {
         if ($genre = "horror") {
             $this->rating = "18+";
         } else if($genre = "thriller") {
-            $this->rating = "15+"
+            $this->rating = "15+";
         } else {
             $this->rating = "free";
         }
